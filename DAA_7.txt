@@ -1,0 +1,85 @@
+# Desain Analisis Alogoritma Pertemuan 7
+
+AlgoritmaBrute Force
+- Latihan 1 :
+
+def Sequential_Search(dlist, item):
+  pos = 0
+  found = False
+
+  while pos < len (dlist) and not found:
+    if dlist[pos] == item:
+      found = True
+    else:
+        pos = pos + 1
+
+  return found, pos
+
+print(Sequential_Search([11,23,58,31,56,77,43,12,65,19],31))
+(True, 3)
+
+print(Sequential_Search(['a','b','c','d','e','f','g','h'],'e'))
+(True, 4)
+
+
+- Latihan 2 :
+bilangan = int(input('Masukan bilangan: '))
+pangkat = int(input('Masukan pangkat: '))
+
+def hitung_pangkat(bilangan, pangkat):
+  if pangkat > 1:
+    return bilangan * hitung_pangkat(bilangan, pangkat - 1)
+
+  return bilangan
+
+hasil = hitung_pangkat(bilangan, pangkat )
+print(f'Hasil = {hasil}')
+
+Masukan bilangan: 4
+Masukan pangkat: 6
+Hasil = 4096
+
+
+- Latihan 3 :
+n = int(input('Masukkan nilai n: '))
+
+def hitung_faktorial (n):
+  if n > 2:
+    return n * hitung_faktorial(n - 1)
+
+  return 2
+
+faktorial = hitung_faktorial(n)
+print(f'{n}! = {faktorial}')
+
+Masukkan nilai n: 5
+5! = 120
+
+
+- Latihan 4 :
+def string_match(string, sub_str):
+    
+    for i in range(len(string)-len(sub_str)+1):
+        index = i
+    for j in range(len(sub_str)):
+        if string[index] == sub_str[j]:
+            index += 1
+        else:
+            break
+        if index-i == len(sub_str):
+            return i
+    return -1
+if __name__ == "__main__":
+    print(string_match("adbcbdc", "bdc"))
+
+4
+
+
+
+
+
+
+
+
+
+
